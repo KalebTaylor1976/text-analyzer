@@ -43,3 +43,18 @@ function handleFormSubmission() {
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
+
+const assert = require('assert');
+
+const omitOffensiveWords = (text) => {
+  const offensiveWords = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
+  return text.split(' ')
+    .filter(word => !offensiveWords.includes(word))
+    .join(' ');
+};
+
+function boldPassage(word, text) {
+  if ((text.trim().length === 0) || (word.trim().length === 0)) {
+    return null;
+  }
+}
